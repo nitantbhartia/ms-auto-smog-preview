@@ -29,11 +29,10 @@
       e.preventDefault();
       var name = (form.elements.name.value || "").trim();
       var need = (form.elements.need.value || "").trim();
-      var vehicle = (form.elements.vehicle && form.elements.vehicle.value || "").trim();
       var err = document.getElementById("job-err");
       if (!name || !need) { if (err) err.hidden = false; return; }
       if (err) err.hidden = true;
-      var body = "MS Auto & Smog job\nName: " + name + (vehicle ? "\nVehicle: " + vehicle : "") + "\nNeed: " + need;
+      var body = "MS Auto & Smog job\nName: " + name + "\nNeed: " + need;
       window.location.href = "sms:" + PHONE + "?body=" + encodeURIComponent(body);
     });
   }
